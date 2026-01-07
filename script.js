@@ -23,10 +23,26 @@ function calculate() {
         body: JSON.stringify({ expression: expression })
     })
     .then(res => res.json())
-    .then(data => {
-        display.value = data.result;
-    })
+   .then(data => {
+    display.value = data.result;
+    loadHistory();
+})
     .catch(() => {
         display.value = "Error";
     });
 }
+function loadHistory() {
+    fetch("http://127.0.0.1:5000/history")
+        .then(res => res.json())
+        .then(data => {
+            const historyList = document.getElementById("historyList");
+            historyList.innerHTML = "";
+
+            data.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = `${item[0]} = ${item[1]}`;
+                historyList.appendChild(li);
+            });
+        });
+}
+window.onload = loadHistory;
