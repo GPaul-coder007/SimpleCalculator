@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator </title>
+    <title>Simple Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="script" href="script.js">
+
 </head>
 <body>
-    <div class="Calculator" ><br>
-        <input type="text" id="diaplay" disabled >
+          <div class="Calculator" ><br>
+        <input type="text" id="display" disabled>
         <div class="numbers" >
-           <button class="clear" onclick="">AC</button>
-           <button class="backspace" onclick="">C</button>
-           <button class="mod" onclick="">%</button>
-           <button class="div" onclick="">/</button><br>
-           <button class="num7" onclick="">7</button>
-           <button class="num8" onclick="">8</button>
-           <button class="num9" onclick="">9</button>
-           <button class="mul" onclick="">*</button><br>
-           <button class="num4" onclick="">4</button>
-           <button class="num5" onclick="">5</button>
-           <button class="num6" onclick="">6</button>
-           <button class="sub" onclick="">-</button><br>
-           <button class="num1" onclick="">1</button>
-           <button class="num2" onclick="">2</button>
-           <button class="num3" onclick="">3</button>
-           <button class="add" onclick="">+</button><br>
-           <button class="deci" onclick="">.</button>
-           <button class="num0" onclick="">0</button>
-           <button class="equal" onclick="">=</button>
-           <button class="expo" onclick="">^</button><br>
+           <button class="clear" onclick="clearDisplay()">AC</button>
+           <button class="backspace" onclick="backspace()">C</button>
+           <button class="mod" onclick="appendValue('%')">%</button>
+           <button class="div" onclick="appendValue('/')">/</button><br>
+           <button class="num7" onclick="appendValue('7')">7</button>
+           <button class="num8" onclick="appendValue('8')">8</button>
+           <button class="num9" onclick="appendValue('9')">9</button>
+           <button class="mul" onclick="appendValue('*')">*</button><br>
+           <button class="num4" onclick="appendValue('4')">4</button>
+           <button class="num5" onclick="appendValue('5')">5</button>
+           <button class="num6" onclick="appendValue('6')">6</button>
+           <button class="sub" onclick="appendValue('-')">-</button><br>
+           <button class="num1" onclick="appendValue('1')">1</button>
+           <button class="num2" onclick="appendValue('2')">2</button>
+           <button class="num3" onclick="appendValue('3')">3</button>
+           <button class="add" onclick="appendValue('+')">+</button><br>
+           <button class="deci" onclick="appendValue('.')">.</button>
+           <button class="num0" onclick="appendValue('0')">0</button>
+           <button class="equal" onclick="calculate()">=</button>
+           <button class="expo" onclick="appendValue('^')">^</button><br>
 
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
