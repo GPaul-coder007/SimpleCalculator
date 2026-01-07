@@ -37,3 +37,26 @@ button{
     font-size: larger;
     font-weight: 600;
 }
+.history {
+    color: black;
+    max-height: 50px;
+    overflow-y: overlay;
+}
+
+.history h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history li {
+    background: rgba(255,255,255,0.1);
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
