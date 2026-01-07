@@ -1,0 +1,40 @@
+body{
+    margin:0;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #EEAECA,#94BBE9);
+}
+.Calculator{
+    width: fit-content;
+    height: fit-content;
+    background: transparent;
+    border: 2px solid black;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgb(0,0,0.2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 30px;
+}
+#diaplay{
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    border-radius: 10px;
+}
+div>p{
+    align-items: center;
+    font-size: medium;
+}
+button{
+    width: 70px;
+    height: 50px;
+    margin: 10px;
+    border: 10px;
+    border-radius: 30%;
+    text-align: center;
+    font-size: larger;
+    font-weight: 600;
+}
