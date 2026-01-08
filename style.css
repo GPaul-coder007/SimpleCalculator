@@ -44,6 +44,11 @@ body{
     resize: none;
     border: 2px solid white;
     box-shadow: 0 0 5px black;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+#display::-webkit-scrollbar {
+    display: none;
 }
 button{
     width: 70px;
