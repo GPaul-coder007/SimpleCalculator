@@ -57,7 +57,7 @@ document.addEventListener("keydown", (event) => {
     // Numbers and operators
     if (
         (key >= "0" && key <= "9") ||
-        ["+", "-", "*", "/", "."].includes(key)
+        ["+", "-", "*", "/", ".", "^", "%"].includes(key)
     ) {
         appendValue(key);
     }
