@@ -33,14 +33,24 @@ function loadHistory() {
     fetch("https://127.0.0.1:5000/history")
         .then(res => res.json())
         .then(data => {
-            const historyList = document.getElementById("historyList");
-            historyList.innerHTML = "";
+            const display = document.getElementById("display");
+
+            if (data.length === 0) {
+                display.value = "No history";
+                return;
+            }
+
+            let historyText = "";
 
             data.forEach(item => {
-                const li = document.createElement("li");
-                li.textContent = `${item[0]} = ${item[1]}`;
-                historyList.appendChild(li);
+                historyText += `${item[0]} = ${item[1]} | `;
             });
+
+            display.value = historyText.slice(0, -3);
+        })
+        .catch(() => {
+            document.getElementById("display").value = "History Error";
         });
 }
+
 window.onload = loadHistory;
