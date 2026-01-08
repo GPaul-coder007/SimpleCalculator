@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
           <div class="Calculator" ><br>
         <input type="text" id="display" disabled>
-        <div class="history">
-    <ul id="historyList"></ul>
-</div>
-
         <div class="numbers" >
            <button class="clear" onclick="clearDisplay()">AC</button>
            <button class="backspace" onclick="backspace()">C</button>
@@ -35,7 +30,7 @@
            <button class="num0" onclick="appendValue('0')">0</button>
            <button class="equal" onclick="calculate()">=</button>
            <button class="expo" onclick="appendValue('^')">^</button><br>
-
+           <button class="History" onclick="loadHistory()">History</button>
         </div>
     </div>
     <script src="script.js"></script>
