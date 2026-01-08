@@ -15,7 +15,7 @@ function calculate() {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
-        "X-API-KEY": "my-secret-calculator-key-2024"
+        "X-API-KEY": "my-secret-calculator-key-2026"
     },
     body: JSON.stringify({ expression })
 })
