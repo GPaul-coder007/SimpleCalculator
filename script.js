@@ -50,5 +50,33 @@ function loadHistory() {
             document.getElementById("display").value = "";
         });
 }
+/* 🔹 Keyboard Input Support */
+document.addEventListener("keydown", (event) => {
+    const key = event.key;
+
+    // Numbers and operators
+    if (
+        (key >= "0" && key <= "9") ||
+        ["+", "-", "*", "/", "."].includes(key)
+    ) {
+        appendValue(key);
+    }
+
+    // Enter or =
+    else if (key === "Enter" || key === "=") {
+        event.preventDefault();
+        calculate();
+    }
+
+    // Backspace
+    else if (key === "Backspace") {
+        backspace();
+    }
+
+    // Clear display
+    else if (key === "Escape" || key === "Delete") {
+        clearDisplay();
+    }
+});
 
 window.onload = loadHistory;
