@@ -14,7 +14,8 @@ function calculate() {
    fetch("https://127.0.0.1:5000/calculate", {
     method: "POST",
     headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "X-API-KEY": "my-secret-key"
     },
     body: JSON.stringify({ expression })
 })
