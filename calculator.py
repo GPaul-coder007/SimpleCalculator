@@ -2,9 +2,11 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # This is the "Security Pass"
 import sqlite3
 
-app = Flask(__name__)
+if __name__ == '__main__':
+    app.run(debug=True, port=5000, ssl_context='adhoc')
 CORS(app)  # This allows JS to Python
 
+API_KEY = "my-secret-calculator-key-2024"
 
 # 1. Setup the Database (The Memory)
 def init_db():
@@ -33,6 +35,11 @@ init_db()
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
+    user_key = request.headers.get('X-API-KEY')
+    
+    if user_key != API_KEY:
+        return jsonify({"error": "Unauthorized"}), 401
+        
     # Get the data from JS
     data = request.json
     expression = data.get('expression')
@@ -77,4 +84,5 @@ def get_history():
 
 
 if __name__ == '__main__':
+
     app.run(debug=True, port=5000)
