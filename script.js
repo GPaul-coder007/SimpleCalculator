@@ -22,7 +22,6 @@ function calculate() {
     .then(res => res.json())
     .then(data => {
     display.value = data.result;
-    loadHistory();
 })
     .catch(() => {
         display.value = "Error";
