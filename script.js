@@ -19,9 +19,8 @@ function calculate() {
     },
     body: JSON.stringify({ expression })
 })
-
     .then(res => res.json())
-   .then(data => {
+    .then(data => {
     display.value = data.result;
     loadHistory();
 })
@@ -43,13 +42,13 @@ function loadHistory() {
             let historyText = "";
 
             data.forEach(item => {
-                historyText += `${item[0]} = ${item[1]} | `;
+                historyText += `${item[0]} = ${item[1]}\n`;
             });
 
-            display.value = historyText.slice(0, -3);
+            display.value = historyText;
         })
         .catch(() => {
-            document.getElementById("display").value = "History Error";
+            document.getElementById("display").value = "";
         });
 }
 
